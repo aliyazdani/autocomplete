@@ -1,4 +1,3 @@
-
 /*!
  *
  * autocomplete
@@ -65,7 +64,8 @@ function autocomplete (input, items, fn) {
     lastValue = val
 
     // filter already inserted items
-    dropdown.filter(both(match(val), limit(dropdown._maxItems)))
+    // dropdown.filter(both(match(val), limit(dropdown._maxItems)))
+    dropdown.filter(both(match(val), limit(3)))
     dropdown.show()
 
     // fetch async
