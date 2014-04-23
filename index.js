@@ -50,7 +50,8 @@ function autocomplete (input, items, fn) {
 
   // remember latest fn
   var latest
-
+  
+  dropdown.num_items = items.length
   dropdown._maxItems = 5
   dropdown.maxItems = function (n) {
     this._maxItems = n
@@ -65,7 +66,7 @@ function autocomplete (input, items, fn) {
 
     // filter already inserted items
     // dropdown.filter(both(match(val), limit(dropdown._maxItems)))
-    dropdown.filter(both(match(val), limit(3)))
+    dropdown.filter(both(match(val), limit(dropdown.num_items)))
     dropdown.show()
 
     // fetch async
