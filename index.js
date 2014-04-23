@@ -66,7 +66,7 @@ function autocomplete (input, items, fn) {
 
     // filter already inserted items
     // dropdown.filter(both(match(val), limit(dropdown._maxItems)))
-    dropdown.filter(both(match(val), limit(dropdown.num_items)))
+    dropdown.filter(both(match(val), limit(2)))
     dropdown.show()
 
     // fetch async
