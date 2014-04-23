@@ -52,6 +52,7 @@ function autocomplete (input, items, fn) {
   var latest
   
   dropdown.num_items = items.length
+  console.log('items.length', items.length)
   dropdown._maxItems = 5
   dropdown.maxItems = function (n) {
     this._maxItems = n
