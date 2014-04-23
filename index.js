@@ -41,7 +41,7 @@ function autocomplete (input, items, fn) {
   var dropdown = Dropdown(input)
 
   // remember last value
-  // var lastValue = null
+  var lastValue = null
 
   // add items
   items.forEach(function (item) {
@@ -62,8 +62,8 @@ function autocomplete (input, items, fn) {
   // get input value on keyup
   input.onkeyup = input.onfocus = function (ev) {
     var val = input.value
-    // if (val === lastValue) return
-    // lastValue = val
+    if (val === lastValue) return
+    lastValue = val
 
     // filter already inserted items
     dropdown.filter(both(match(val), limit(dropdown._maxItems)))
@@ -101,8 +101,7 @@ function autocomplete (input, items, fn) {
     if (!item) return
     if (input.value != item.text) {
       input.focus()
-      // input.value = lastValue = item.text
-      input.value = item.text
+      input.value = lastValue = item.text
     }
   })
 
