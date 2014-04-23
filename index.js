@@ -46,6 +46,7 @@ function autocomplete (input, items, fn) {
   // add items
   items.forEach(function (item) {
     dropdown.add(item)
+    console.log('just added item, here is dropdown', dropdown)
   })
 
   // remember latest fn
